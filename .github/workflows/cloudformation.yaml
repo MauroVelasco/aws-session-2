@@ -1,7 +1,14 @@
 name: Create a S3 bucket
 on:
-  push:
-    branches: [ "main" ]
+  #push:
+  #  branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
 jobs:
   deploy:
     runs-on: ubuntu-latest
